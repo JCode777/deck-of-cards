@@ -1,20 +1,20 @@
-let cards = ['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+var suits = ["spades", "diamonds", "clubs", "hearts"];
+var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-let suits = ['Diamonds', 'Spades', 'Hearts', 'Clubs'];
+function getDeck()
+{
+	var deck = new Array();
 
-function getDeck() {
-    var deck = new Array();
+	for(var i = 0; i < suits.length; i++)
+	{
+		for(var x = 0; x < values.length; x++)
+		{
+			var card = {Value: values[x], Suit: suits[i]};
+			deck.push(card);
+		}
+	}
 
-    for(var i = 0; i < suits.length; i++) {
-        for(var j = 0; j < cards.length; j++) {
-            var card = {
-                Card: cards[j],
-                Suit: suits[i]
-            }
-            deck.push(card);
-        }
-    }
-    return deck;
+	return deck;
 }
 
 function shuffle(deck)
