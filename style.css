@@ -1,27 +1,35 @@
-.deck .card
+.deck
 {
-	border: solid 1px #aaa;
-	border-radius: 9px;
-	width: 95px;
-	height: 150px;
-	float:left;
-	background-color: white;
-	padding: 3px 3px 3px 3px;
-	margin: 5px;
+	width:50%;
+	margin: 20px auto;
+	background:dodgerblue;
+	border:solid 10px black;
+	padding: 10px;
+	border-radius:10px;
+	text-align: center;
+	color:white;
 }
 
-.card2
+.card
 {
-            width: 50px;
-            padding: 10px;
-            border: solid 1px #808080;
-            background-color: white;
-            display: inline-block;
-            border-radius: 10px;
-            font-size: 22px;
-            text-align: center;
-            margin: 3px;
-            border:solid 3px;
+	padding: 10px;
+	border: solid 1px #808080;
+	background-color: white;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 14pt;
+	text-align: center;
+	color:black;
+	margin: 3px;
+}
+
+.btn
+{
+	background:white;
+	padding: 10px 20px;
+	border-radius:30px;
+	margin: 10px;
+	display:inline-block;
 }
 
 .card .value{
@@ -31,7 +39,7 @@
 
 .card .suit
 {
-	background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+	background-image: url('/card.png');
 	height: 100px;
 	width: 90px;
 }
@@ -51,3 +59,4 @@
 	background-position-x:90px;
 	background-position-y:100px;
 }
+   
