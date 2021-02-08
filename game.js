@@ -1,5 +1,6 @@
-var suits = ["spades", "diamonds", "clubs", "hearts"];
-var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+var cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+var suits = ["diamonds", "hearts", "spades", "clubs"];
+var deck = new Array();
 
 function getDeck()
 {
@@ -7,9 +8,9 @@ function getDeck()
 
 	for(var i = 0; i < suits.length; i++)
 	{
-		for(var x = 0; x < values.length; x++)
+		for(var x = 0; x < cards.length; x++)
 		{
-			var card = {Value: values[x], Suit: suits[i]};
+			var card = {Value: cards[x], Suit: suits[i]};
 			deck.push(card);
 		}
 	}
@@ -17,7 +18,7 @@ function getDeck()
 	return deck;
 }
 
-function shuffle(deck)
+function shuffle()
 {
 	// for 1000 turns
 	// switch the values of two random cards
@@ -30,17 +31,18 @@ function shuffle(deck)
 		deck[location1] = deck[location2];
 		deck[location2] = tmp;
 	}
+
+	renderDeck();
 }
 
-function renderDeck(deck)
+function renderDeck()
 {
-      document.getElementById("deck").innerHTML = "";
-
-	for(let i = 0; i < deck.length; i++)
+	document.getElementById('deck').innerHTML = '';
+	for(var i = 0; i < deck.length; i++)
 	{
-		let card = document.createElement("div");
-		let value = document.createElement("div");
-		let suit = document.createElement("div");
+		var card = document.createElement("div");
+		var value = document.createElement("div");
+		var suit = document.createElement("div");
 		card.className = "card";
 		value.className = "value";
 		suit.className = "suit " + deck[i].Suit;
@@ -52,3 +54,13 @@ function renderDeck(deck)
 		document.getElementById("deck").appendChild(card);
 	}
 }
+
+
+function load()
+{
+	deck = getDeck();
+	shuffle();
+	renderDeck();
+}
+
+window.onload = load;
